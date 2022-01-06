@@ -26,7 +26,7 @@ class MainViewController: UIViewController, PKCanvasViewDelegate, PKToolPickerOb
         
         //Setup naviagtion item
         navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(leftBarButtonTapped))
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .camera, target: self, action: #selector(rightBarButtonTapped))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "eye.circle"), style: .plain, target: self, action: #selector(rightBarButtonTapped))
         
         // Setup the canvasView
         canvasView.delegate = self
@@ -84,6 +84,7 @@ class MainViewController: UIViewController, PKCanvasViewDelegate, PKToolPickerOb
     }
     
     @objc func rightBarButtonTapped() {
-        print("RIGHT BAR BUTTON")
+        
+        
     }
 }
