@@ -21,6 +21,9 @@ class MainViewController: UIViewController, PKCanvasViewDelegate, PKToolPickerOb
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        // Set main view color to white to make naviagtion also white
+        self.view.backgroundColor = UIColor.white
+        
         //Setup naviagtion item
         navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(leftBarButtonTapped))
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .camera, target: self, action: #selector(rightBarButtonTapped))
