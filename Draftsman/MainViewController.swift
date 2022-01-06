@@ -38,8 +38,16 @@ class MainViewController: UIViewController, PKCanvasViewDelegate, PKToolPickerOb
         canvasView.backgroundColor = .clear
         canvasView.isOpaque = false
         
-        // Setupview
+        // Setup canvasView
         self.view.addSubview(canvasView)
+        
+        // Setup layout of canvas
+        canvasView.backgroundColor = UIColor.white
+        canvasView.translatesAutoresizingMaskIntoConstraints = false
+        canvasView.leftAnchor.constraint(equalTo: self.view.leftAnchor).isActive = true
+        canvasView.rightAnchor.constraint(equalTo: self.view.rightAnchor).isActive = true
+        canvasView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor).isActive = true
+        canvasView.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor).isActive = true
     }
     
 
