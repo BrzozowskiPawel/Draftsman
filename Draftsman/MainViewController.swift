@@ -57,8 +57,23 @@ class MainViewController: UIViewController, PKCanvasViewDelegate, PKToolPickerOb
 
     // MARK: - NavigationItem targets:
     
+    // Saving photo to the camerra roll
     @objc func leftBarButtonTapped() {
-        print("LEFT BAR BUTTON")
+        UIGraphicsBeginImageContextWithOptions(canvasView.bounds.size, false, UIScreen.main.scale)
+        
+        canvasView.drawHierarchy(in: canvasView.bounds, afterScreenUpdates: true)
+        
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        if image != nil {
+            PHPhotoLibrary.shared().performChanges {
+                PHAssetChangeRequest.creationRequestForAsset(from: image!)
+            } completionHandler: { succes, error in
+                // Deal with error
+            }
+
+        }
     }
     @objc func rightBarButtonTapped() {
         print("RIGHT BAR BUTTON")
