@@ -59,6 +59,7 @@ class MainViewController: UIViewController, PKCanvasViewDelegate, PKToolPickerOb
     
     // Saving photo to the camerra roll
     @objc func leftBarButtonTapped() {
+        // Save to photo roll
         UIGraphicsBeginImageContextWithOptions(canvasView.bounds.size, false, UIScreen.main.scale)
         
         canvasView.drawHierarchy(in: canvasView.bounds, afterScreenUpdates: true)
@@ -72,9 +73,16 @@ class MainViewController: UIViewController, PKCanvasViewDelegate, PKToolPickerOb
             } completionHandler: { succes, error in
                 // Deal with error
             }
-
         }
+        
+        // Dispaly alert that photo have been saved
+        let alert = UIAlertController(title: "Photo saved", message: "Your photo has been saved to the camera roll.", preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        
+        self.present(alert, animated: true, completion: nil)
     }
+    
     @objc func rightBarButtonTapped() {
         print("RIGHT BAR BUTTON")
     }

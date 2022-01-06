@@ -56,10 +56,10 @@
 			children = (
 				04B2DEAB2786560700FF2934 /* AppDelegate.swift */,
 				04B2DEAD2786560700FF2934 /* SceneDelegate.swift */,
+				04C8A6E127879CE100F8C033 /* MainViewController.swift */,
 				04B2DEB42786560700FF2934 /* Assets.xcassets */,
 				04B2DEB62786560700FF2934 /* LaunchScreen.storyboard */,
 				04B2DEB92786560700FF2934 /* Info.plist */,
-				04C8A6E127879CE100F8C033 /* MainViewController.swift */,
 			);
 			path = Draftsman;
 			sourceTree = "<group>";
